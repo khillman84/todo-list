@@ -16,7 +16,7 @@
 @import Firebase;
 
 
-@interface ViewController () <UITableViewDataSource>
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property(strong, nonatomic) FIRDatabaseReference *userReference;
 @property(strong, nonatomic) FIRUser *currentUser;
@@ -35,6 +35,7 @@
     [super viewDidLoad];
     
     self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     
     self.todoHeight.constant = 0;
     
@@ -79,15 +80,22 @@
         
         for (FIRDataSnapshot *child in snapshot.children) {
             NSDictionary *todoData = child.value;
+            NSLog(@"line 83: %@", child.key);
+            NSString *todoKey = todoData[@"key"];
             NSString *todoTitle = todoData[@"title"];
             NSString *todoContent = todoData[@"content"];
-                
+            NSNumber *todoCompleted = todoData[@"completed"];
+            
             //for lab append new todo to all todos array
-            NSLog(@"Todo Title: %@ - Content: %@", todoTitle, todoContent);
-            Todo *currentTodo = [[Todo alloc] init];
-            currentTodo.title = todoTitle;
-            currentTodo.content = todoContent;
-            [self.allTodos addObject:currentTodo];
+            if (todoCompleted.integerValue == 0) {
+                NSLog(@"Todo Title: %@ - Content: %@", todoTitle, todoContent);
+                Todo *currentTodo = [[Todo alloc] init];
+                currentTodo.title = todoTitle;
+                currentTodo.content = todoContent;
+                currentTodo.key = todoKey;
+                
+                [self.allTodos addObject:currentTodo];
+            }
         }
         [self.tableView reloadData];
     }];
@@ -131,6 +139,21 @@
     return self.allTodos.count;
 }
 
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        self.userReference = [[FIRDatabase database] reference];
+        
+        Todo *currentTodo = _allTodos[indexPath.row];
+
+        [[[[[[_userReference child:@"users"] child:_currentUser.uid] child:@"todos"] child:currentTodo.key] child:@"completed"] setValue:@1];
+    }
+    [self.tableView reloadData];
+}
 
 @end
 
