@@ -56,6 +56,4 @@
 
 
 
-//Sign out process
-//NSError *signOutError:
-//[FIRAuth auth] signOut:&signOutError];
+

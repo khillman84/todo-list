@@ -19,6 +19,8 @@
 @property(strong, nonatomic) FIRDatabaseReference *userReference;
 @property(strong, nonatomic) FIRUser *currentUser;
 @property(nonatomic) FIRDatabaseHandle allTodosHandler;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *todoHeight;
+
 
 @end
 
@@ -27,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.todoHeight.constant = 0;
     
 }
 
@@ -73,6 +76,28 @@
         }
     }];
 }
+- (IBAction)logoutButtonPressed:(id)sender {
+
+    NSError *signOutError;
+    [[FIRAuth auth] signOut:&signOutError];
+    
+    [self checkUserStatus];
+    
+}
+
+- (IBAction)addButtonPressed:(id)sender {
+
+    if (self.todoHeight.constant == 0) {
+        self.todoHeight.constant = 150;
+    } else {
+        self.todoHeight.constant = 0;
+    }
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.view layoutIfNeeded];
+    }];
+}
+
 
 @end
 
