@@ -18,6 +18,8 @@
 		E510C8531EC0DD9C006F0C04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E510C8521EC0DD9C006F0C04 /* Assets.xcassets */; };
 		E510C8561EC0DD9C006F0C04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E510C8541EC0DD9C006F0C04 /* LaunchScreen.storyboard */; };
 		E510C8611EC0DFD1006F0C04 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E510C8601EC0DFD1006F0C04 /* GoogleService-Info.plist */; };
+		E5299B551EC261B6008CDBB6 /* RemovedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5299B541EC261B6008CDBB6 /* RemovedViewController.m */; };
+		E5299B581EC26326008CDBB6 /* RemovedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5299B571EC26326008CDBB6 /* RemovedTableViewCell.m */; };
 		E5E7032D1EC233AA00184F72 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E7032B1EC233AA00184F72 /* Interface.storyboard */; };
 		E5E7032F1EC233AA00184F72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5E7032E1EC233AA00184F72 /* Assets.xcassets */; };
 		E5E703361EC233AA00184F72 /* watchkit-todo-list Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E5E703351EC233AA00184F72 /* watchkit-todo-list Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -98,6 +100,10 @@
 		E510C8551EC0DD9C006F0C04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E510C8571EC0DD9C006F0C04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E510C8601EC0DFD1006F0C04 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E5299B531EC261B6008CDBB6 /* RemovedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemovedViewController.h; sourceTree = "<group>"; };
+		E5299B541EC261B6008CDBB6 /* RemovedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemovedViewController.m; sourceTree = "<group>"; };
+		E5299B561EC26326008CDBB6 /* RemovedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemovedTableViewCell.h; sourceTree = "<group>"; };
+		E5299B571EC26326008CDBB6 /* RemovedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemovedTableViewCell.m; sourceTree = "<group>"; };
 		E5E703291EC233AA00184F72 /* watchkit-todo-list.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "watchkit-todo-list.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5E7032C1EC233AA00184F72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		E5E7032E1EC233AA00184F72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -214,6 +220,8 @@
 		E510C85D1EC0DECD006F0C04 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E5299B531EC261B6008CDBB6 /* RemovedViewController.h */,
+				E5299B541EC261B6008CDBB6 /* RemovedViewController.m */,
 				E50EC6C61EC10E5F004935E1 /* NewTodoViewController.h */,
 				E50EC6C71EC10E5F004935E1 /* NewTodoViewController.m */,
 				E50EC6C31EC0EBC6004935E1 /* LoginViewController.h */,
@@ -240,6 +248,8 @@
 		E510C85F1EC0DEE0006F0C04 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E5299B561EC26326008CDBB6 /* RemovedTableViewCell.h */,
+				E5299B571EC26326008CDBB6 /* RemovedTableViewCell.m */,
 				E50971241EC1456500764FA6 /* TodoTableViewCell.h */,
 				E50971251EC1456500764FA6 /* TodoTableViewCell.m */,
 				E510C84F1EC0DD9C006F0C04 /* Main.storyboard */,
@@ -521,10 +531,12 @@
 				E50EC6C51EC0EBC6004935E1 /* LoginViewController.m in Sources */,
 				E50971261EC1456500764FA6 /* TodoTableViewCell.m in Sources */,
 				E510C84E1EC0DD9C006F0C04 /* ViewController.m in Sources */,
+				E5299B551EC261B6008CDBB6 /* RemovedViewController.m in Sources */,
 				E510C84B1EC0DD9C006F0C04 /* AppDelegate.m in Sources */,
 				E50EC6C81EC10E5F004935E1 /* NewTodoViewController.m in Sources */,
 				E510C8481EC0DD9C006F0C04 /* main.m in Sources */,
 				E5E703531EC2421F00184F72 /* Todo.m in Sources */,
+				E5299B581EC26326008CDBB6 /* RemovedTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -843,6 +855,7 @@
 				E5E703491EC233AA00184F72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E5E7034C1EC233AA00184F72 /* Build configuration list for PBXNativeTarget "watchkit-todo-list" */ = {
 			isa = XCConfigurationList;
@@ -851,6 +864,7 @@
 				E5E703471EC233AA00184F72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E5E7036A1EC246C100184F72 /* Build configuration list for PBXNativeTarget "tv-todo-list" */ = {
 			isa = XCConfigurationList;
@@ -859,6 +873,7 @@
 				E5E7036C1EC246C100184F72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
