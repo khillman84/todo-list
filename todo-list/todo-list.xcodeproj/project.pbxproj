@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B68AD71B06D55999323D044F /* libPods-todo-list.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1455E237D6E00C923FD9DF3 /* libPods-todo-list.a */; };
+		E50971261EC1456500764FA6 /* TodoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E50971251EC1456500764FA6 /* TodoTableViewCell.m */; };
 		E50EC6C51EC0EBC6004935E1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E50EC6C41EC0EBC6004935E1 /* LoginViewController.m */; };
 		E50EC6C81EC10E5F004935E1 /* NewTodoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E50EC6C71EC10E5F004935E1 /* NewTodoViewController.m */; };
 		E510C8481EC0DD9C006F0C04 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E510C8471EC0DD9C006F0C04 /* main.m */; };
@@ -22,6 +23,8 @@
 /* Begin PBXFileReference section */
 		0B089782D7871253AF915770 /* Pods-todo-list.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todo-list.release.xcconfig"; path = "Pods/Target Support Files/Pods-todo-list/Pods-todo-list.release.xcconfig"; sourceTree = "<group>"; };
 		B1ABC132277A6C5DE05BC0FB /* Pods-todo-list.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todo-list.debug.xcconfig"; path = "Pods/Target Support Files/Pods-todo-list/Pods-todo-list.debug.xcconfig"; sourceTree = "<group>"; };
+		E50971241EC1456500764FA6 /* TodoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoTableViewCell.h; sourceTree = "<group>"; };
+		E50971251EC1456500764FA6 /* TodoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoTableViewCell.m; sourceTree = "<group>"; };
 		E50EC6C31EC0EBC6004935E1 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		E50EC6C41EC0EBC6004935E1 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		E50EC6C61EC10E5F004935E1 /* NewTodoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTodoViewController.h; sourceTree = "<group>"; };
@@ -133,6 +136,8 @@
 		E510C85F1EC0DEE0006F0C04 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E50971241EC1456500764FA6 /* TodoTableViewCell.h */,
+				E50971251EC1456500764FA6 /* TodoTableViewCell.m */,
 				E510C84F1EC0DD9C006F0C04 /* Main.storyboard */,
 				E510C8521EC0DD9C006F0C04 /* Assets.xcassets */,
 				E510C8541EC0DD9C006F0C04 /* LaunchScreen.storyboard */,
@@ -265,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E50EC6C51EC0EBC6004935E1 /* LoginViewController.m in Sources */,
+				E50971261EC1456500764FA6 /* TodoTableViewCell.m in Sources */,
 				E510C84E1EC0DD9C006F0C04 /* ViewController.m in Sources */,
 				E510C84B1EC0DD9C006F0C04 /* AppDelegate.m in Sources */,
 				E50EC6C81EC10E5F004935E1 /* NewTodoViewController.m in Sources */,

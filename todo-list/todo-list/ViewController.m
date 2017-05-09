@@ -8,28 +8,36 @@
 
 #import "ViewController.h"
 #import "LoginViewController.h"
+#import "TodoTableViewCell.h"
 
 
 @import FirebaseAuth;
 @import Firebase;
 
 
-@interface ViewController ()
+@interface ViewController () <UITableViewDataSource>
 
 @property(strong, nonatomic) FIRDatabaseReference *userReference;
 @property(strong, nonatomic) FIRUser *currentUser;
 @property(nonatomic) FIRDatabaseHandle allTodosHandler;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *todoHeight;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property(strong, nonatomic) NSMutableArray *allTodos;
 
 @end
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.dataSource = self;
+    
     self.todoHeight.constant = 0;
+    
+    
     
 }
 
@@ -63,8 +71,10 @@
 
 -(void)startMonitoringTodoUpdates {
     
+    
     self.allTodosHandler = [[self.userReference child:@"todos"] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
-        NSMutableArray *allTodos = [[NSMutableArray alloc]init];
+        
+        self.allTodos = [[NSMutableArray alloc]init];
         
         for (FIRDataSnapshot *child in snapshot.children) {
             NSDictionary *todoData = child.value;
@@ -72,10 +82,13 @@
             NSString *todoContent = todoData[@"content"];
                 
             //for lab append new todo to all todos array
-                NSLog(@"Todo Title: %@ - Content: %@", todoTitle, todoContent);
+            NSLog(@"Todo Title: %@ - Content: %@", todoTitle, todoContent);
+            [self.allTodos addObject:todoData];
         }
+        [self.tableView reloadData];
     }];
 }
+
 - (IBAction)logoutButtonPressed:(id)sender {
 
     NSError *signOutError;
@@ -96,6 +109,22 @@
     [UIView animateWithDuration:0.3 animations:^{
         [self.view layoutIfNeeded];
     }];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    TodoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
+    NSDictionary *currentData = self.allTodos[indexPath.row];
+    cell.titleText.text = currentData[@"title"];
+    cell.contentText.text = currentData[@"content"];
+    
+    return cell;
+    
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return _allTodos.count;
 }
 
 
