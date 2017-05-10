@@ -70,6 +70,43 @@
             </objects>
             <point key="canvasLocation" x="2201" y="75"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Ca7-8D-hzT">
+            <objects>
+                <viewController storyboardIdentifier="TVDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Akh-DH-hiD" customClass="TVDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bse-Mt-tqR"/>
+                        <viewControllerLayoutGuide type="bottom" id="p2Y-4u-rFF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="INR-nF-A5x">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqZ-cG-5XU">
+                                <rect key="frame" x="593" y="275" width="93" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hw-Nb-cew">
+                                <rect key="frame" x="1266" y="684" width="93" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="contentLabel" destination="0hw-Nb-cew" id="GSt-3J-9SA"/>
+                        <outlet property="titleLabel" destination="cqZ-cG-5XU" id="7Rm-fV-lPj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QNA-Ju-Nnf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1794" y="1575"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="aSR-p6-cF7">
             <objects>

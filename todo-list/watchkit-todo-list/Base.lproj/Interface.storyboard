@@ -39,12 +39,25 @@
                 </controller>
             </objects>
         </scene>
-        <!--Interface Controller-->
+        <!--DetailController-->
         <scene sceneID="1k2-y0-Gdg">
             <objects>
-                <controller id="2wp-Ug-Qco"/>
+                <controller identifier="DetailController" id="2wp-Ug-Qco" customClass="DetailController">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="VQx-Mg-8CC">
+                            <items>
+                                <label alignment="left" text="Label" id="Bfi-Kp-itX"/>
+                                <label alignment="left" text="Content" textAlignment="right" numberOfLines="0" id="GLa-g5-CaX"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="contentText" destination="GLa-g5-CaX" id="kH5-YM-Zkl"/>
+                        <outlet property="titleText" destination="Bfi-Kp-itX" id="DSe-Ks-PYx"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="283" y="37"/>
+            <point key="canvasLocation" x="506" y="88"/>
         </scene>
     </scenes>
 </document>

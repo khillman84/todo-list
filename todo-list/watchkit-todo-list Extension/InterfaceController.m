@@ -9,6 +9,7 @@
 #import "InterfaceController.h"
 #import "Todo.h"
 #import "TodoRowController.h"
+#import "DetailController.h"
 
 
 @interface InterfaceController ()
@@ -64,6 +65,10 @@
 }
 
 -(void)table:(WKInterfaceTable *)table didSelectRowAtIndex:(NSInteger)rowIndex {
+    
+    NSDictionary *currentTodo = @{@"title": self.allTodos[rowIndex].title, @"content": self.allTodos[rowIndex].content};
+    [self pushControllerWithName:@"DetailController" context:currentTodo];
+    
     
 }
 

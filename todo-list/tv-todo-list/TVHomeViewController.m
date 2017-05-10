@@ -8,8 +8,9 @@
 
 #import "TVHomeViewController.h"
 #import "Todo.h"
+#import "TVDetailViewController.h"
 
-@interface TVHomeViewController () <UITableViewDataSource>
+@interface TVHomeViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 
@@ -23,6 +24,7 @@
     [super viewDidLoad];
     
     self.tableView.dataSource = self;
+    self.tableView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,4 +62,43 @@
     return self.allTodos.count;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    TVDetailViewController *detailView = [self.storyboard instantiateViewControllerWithIdentifier:@"TVDetailViewController"];
+    detailView.TVTodo = self.allTodos[indexPath.row];
+    
+    [self presentViewController:detailView animated:YES completion:nil];
+}
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
