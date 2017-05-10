@@ -22,6 +22,7 @@
 		E5299B581EC26326008CDBB6 /* RemovedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5299B571EC26326008CDBB6 /* RemovedTableViewCell.m */; };
 		E5299B5E1EC29615008CDBB6 /* DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5299B5D1EC29615008CDBB6 /* DetailController.m */; };
 		E5299B611EC29888008CDBB6 /* TVDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5299B601EC29888008CDBB6 /* TVDetailViewController.m */; };
+		E5453B7E1EC3B20500E7377E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5453B7D1EC3B20500E7377E /* LoginViewController.m */; };
 		E5B3B6591EC3843700FCBCA2 /* FirebaseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B3B6581EC3843700FCBCA2 /* FirebaseAPI.m */; };
 		E5E7032D1EC233AA00184F72 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E7032B1EC233AA00184F72 /* Interface.storyboard */; };
 		E5E7032F1EC233AA00184F72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5E7032E1EC233AA00184F72 /* Assets.xcassets */; };
@@ -111,6 +112,8 @@
 		E5299B5D1EC29615008CDBB6 /* DetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailController.m; sourceTree = "<group>"; };
 		E5299B5F1EC29888008CDBB6 /* TVDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVDetailViewController.h; sourceTree = "<group>"; };
 		E5299B601EC29888008CDBB6 /* TVDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVDetailViewController.m; sourceTree = "<group>"; };
+		E5453B7C1EC3B20500E7377E /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		E5453B7D1EC3B20500E7377E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		E5B3B6561EC382C900FCBCA2 /* Credentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
 		E5B3B6571EC3843700FCBCA2 /* FirebaseAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirebaseAPI.h; sourceTree = "<group>"; };
 		E5B3B6581EC3843700FCBCA2 /* FirebaseAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirebaseAPI.m; sourceTree = "<group>"; };
@@ -304,6 +307,8 @@
 				E5B3B6581EC3843700FCBCA2 /* FirebaseAPI.m */,
 				E5E7036D1EC248B500184F72 /* TVHomeViewController.h */,
 				E5E7036E1EC248B500184F72 /* TVHomeViewController.m */,
+				E5453B7C1EC3B20500E7377E /* LoginViewController.h */,
+				E5453B7D1EC3B20500E7377E /* LoginViewController.m */,
 				E5E7035E1EC246C100184F72 /* AppDelegate.h */,
 				E5E7035F1EC246C100184F72 /* AppDelegate.m */,
 				E5E703641EC246C100184F72 /* Main.storyboard */,
@@ -577,6 +582,7 @@
 				E5B3B6591EC3843700FCBCA2 /* FirebaseAPI.m in Sources */,
 				E5E7035D1EC246C100184F72 /* main.m in Sources */,
 				E5E7036F1EC248B500184F72 /* TVHomeViewController.m in Sources */,
+				E5453B7E1EC3B20500E7377E /* LoginViewController.m in Sources */,
 				E5299B611EC29888008CDBB6 /* TVDetailViewController.m in Sources */,
 				E5E703701EC249D700184F72 /* Todo.m in Sources */,
 			);

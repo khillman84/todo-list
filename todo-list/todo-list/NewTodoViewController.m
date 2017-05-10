@@ -33,6 +33,8 @@
     
     FIRDatabaseReference *userReference = [[databaseReference child:@"users"] child:currentUser.uid];
     
+    [[userReference child:@"email"] setValue:currentUser.email];
+    
     FIRDatabaseReference *newTodoReference = [[userReference child:@"todos"] childByAutoId];
     
     [[newTodoReference child:@"title"] setValue:self.titleTextField.text];

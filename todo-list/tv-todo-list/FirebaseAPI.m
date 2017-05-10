@@ -8,6 +8,8 @@
 
 #import "FirebaseAPI.h"
 #import "Credentials.h"
+#import "LoginViewController.h"
+#import "Todo.h"
 
 @implementation FirebaseAPI
 
@@ -26,16 +28,23 @@
         
         NSMutableArray *allTodos = [[NSMutableArray alloc] init];
         
+        LoginViewController *userEmail = [[LoginViewController alloc]init];
+
+        
         for (NSDictionary *userTodosDictionary in [rootObject allValues]) {
             NSArray *userTodos = [userTodosDictionary[@"todos"] allValues];
             
             for (NSDictionary *todoDictionary in userTodos) {
-                Todo *newTodo = [[Todo alloc]init];
-                newTodo.title = todoDictionary[@"title"];
-                newTodo.content = todoDictionary[@"content"];
-                //assign other todo properties here
                 
-                [allTodos addObject:newTodo];
+                if ([todoDictionary[@"email"] isEqualToString:userEmail.currentEmail]) {
+                    Todo *newTodo = [[Todo alloc]init];
+                    newTodo.title = todoDictionary[@"title"];
+                    newTodo.content = todoDictionary[@"content"];
+                    //assign other todo properties here
+                    
+                    [allTodos addObject:newTodo];
+                }
+                
             }
         }
         if (completion) {
@@ -48,7 +57,7 @@
                 completion(allTodos);
             });
         }
-    }] resume];
+    }]resume];
 }
 
 @end
