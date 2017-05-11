@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qwb-w8-aga">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="U7f-QT-Hm3">
     <device id="appleTV" orientation="landscape">
         <adaptation id="light"/>
     </device>
@@ -10,6 +10,59 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="oIr-TF-sUF">
+            <objects>
+                <viewController id="U7f-QT-Hm3" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cb8-Rf-bW2"/>
+                        <viewControllerLayoutGuide type="bottom" id="lNO-oV-QTj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NAV-jI-u4I">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXM-Rc-QQt">
+                                <rect key="frame" x="0.0" y="205" width="1920" height="46"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="johnjohnnyj@joojoobean.com" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O6U-B9-3gf">
+                                <rect key="frame" x="672" y="353" width="576" height="46"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihE-cr-n8R">
+                                <rect key="frame" x="864" y="525" width="192" height="86"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="LOGIN"/>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="U7f-QT-Hm3" eventType="primaryActionTriggered" id="Aij-mg-c5a"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="Mv2-2g-F3I"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ihE-cr-n8R" firstAttribute="centerX" secondItem="NAV-jI-u4I" secondAttribute="centerX" id="0rw-gd-OUz"/>
+                            <constraint firstItem="vXM-Rc-QQt" firstAttribute="top" secondItem="cb8-Rf-bW2" secondAttribute="bottom" constant="205" id="2wL-rk-qlb"/>
+                            <constraint firstItem="O6U-B9-3gf" firstAttribute="top" secondItem="vXM-Rc-QQt" secondAttribute="bottom" constant="102" id="HgQ-tT-95G"/>
+                            <constraint firstItem="vXM-Rc-QQt" firstAttribute="centerX" secondItem="NAV-jI-u4I" secondAttribute="centerX" id="HhI-mI-NCc"/>
+                            <constraint firstItem="ihE-cr-n8R" firstAttribute="top" secondItem="O6U-B9-3gf" secondAttribute="bottom" constant="126" id="IKN-ru-iyc"/>
+                            <constraint firstItem="vXM-Rc-QQt" firstAttribute="width" secondItem="NAV-jI-u4I" secondAttribute="width" id="MpH-e3-Mdj"/>
+                            <constraint firstItem="O6U-B9-3gf" firstAttribute="width" secondItem="NAV-jI-u4I" secondAttribute="width" multiplier="0.3" id="WFO-hn-GXk"/>
+                            <constraint firstItem="O6U-B9-3gf" firstAttribute="centerX" secondItem="NAV-jI-u4I" secondAttribute="centerX" id="yyR-Nb-jBJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="O6U-B9-3gf" id="K0T-hp-FWt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fiZ-rD-IGJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-196" y="75"/>
+        </scene>
         <!--TODO List-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -23,7 +76,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="aNa-34-Q7N">
-                                <rect key="frame" x="240" y="245" width="1440" height="540"/>
+                                <rect key="frame" x="240" y="100" width="1440" height="540"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="Dji-Ah-d5h" detailTextLabel="T9o-ll-qlK" style="IBUITableViewCellStyleSubtitle" id="igg-IB-RJc">
@@ -105,25 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QNA-Ju-Nnf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1794" y="1575"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="aSR-p6-cF7">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qwb-w8-aga" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="70H-dq-hr9">
-                        <rect key="frame" x="0.0" y="0.0" width="1920" height="145"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="kUQ-hg-h9E"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z50-7w-WY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-313" y="75"/>
+            <point key="canvasLocation" x="2201" y="1574"/>
         </scene>
     </scenes>
 </document>

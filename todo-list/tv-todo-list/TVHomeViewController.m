@@ -9,6 +9,7 @@
 #import "TVHomeViewController.h"
 #import "Todo.h"
 #import "TVDetailViewController.h"
+#import "FirebaseAPI.h"
 
 @interface TVHomeViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -25,6 +26,14 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
+
+//    ^(NSArray<Todo *>
+    [FirebaseAPI fetchAllTodos:^(NSArray<Todo *> *allTodos)  {
+        NSLog(@"%@", allTodos);
+        self.allTodos = allTodos;
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,21 +41,6 @@
     // Dispose of any resources that can be recreated.
 }
 
--(NSArray<Todo *> *)allTodos {
-    Todo *firstTodo = [[Todo alloc]init];
-    firstTodo.title = @"First Todo";
-    firstTodo.content = @"This a todo.";
-    
-    Todo *secondTodo = [[Todo alloc]init];
-    secondTodo.title = @"Second Todo";
-    secondTodo.content = @"This a todo 2.";
-    
-    Todo *thirdTodo = [[Todo alloc]init];
-    thirdTodo.title = @"Third Todo";
-    thirdTodo.content = @"This a todo 3.";
-    
-    return @[firstTodo, secondTodo, thirdTodo];
-}
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
